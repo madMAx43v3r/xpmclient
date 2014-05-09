@@ -1,12 +1,11 @@
-
-Primecoin XPM GPU Miner for xpmpool
-
-aka. madPrimeMiner
+Primecoin XPM GPU Miner for xpmpool (aka. madPrimeMiner)
+==============
 
 See: https://bitcointalk.org/index.php?topic=598542.0
+--------------
 
 The miner works with:
-- OpenCL
+- OpenCL (AMD only)
 - ZEROMQ message system
 - Google protobuf protocol
 - GMP
