@@ -1,0 +1,9 @@
+
+
+server = "127.0.0.1";
+port = "6666";
+
+address = "AdRhBWBSxXrSJeqrwC1rM7gukYkP1nciMS";
+name = "madmachine";
+
+

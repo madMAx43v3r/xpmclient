@@ -1,0 +1,37 @@
+
+server = "54.187.143.168";
+port = "6666";
+
+# Your XPM payout address
+address = "AdRhBWBSxXrSJeqrwC1rM7gukYkP1nciMS";
+
+# You can give this machine a custom name
+# Computer name is used as default
+#name = "custom_name";
+
+# - Valid cpuload range: 0 to 4
+# - More than 2 does not make sense
+# - You can use 0 for really slow CPUs
+cpuload = "1";
+
+# - The following settings have one entry per GPU
+# - If you have more than 4 just add more entries or leave it as is to use defaults
+# - All entries must be separated by commas and set between double quotes
+
+# 0 = don't use device
+# 1 = use device
+devices =        ["1", "1", "1", "1"];
+
+# 5 is the best setting regardless of GPU type
+hashprimorial =  ["5", "5", "5", "5"];
+
+# Use 13 for Tahiti (79XX/280X)
+# You can try 12 for 290/290X
+sieveprimorial = ["13", "13", "13", "13"];
+
+# -1 means don't change
+corefreq =       ["1000", "-1", "-1", "-1"];
+memfreq =        ["1250", "-1", "-1", "-1"];
+powertune =      ["20", "20", "20", "20"];
+
+

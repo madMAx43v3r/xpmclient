@@ -1,0 +1,19 @@
+
+#server = "192.168.2.102";
+server = "54.187.150.244";
+port = "6666";
+
+address = "AdRhBWBSxXrSJeqrwC1rM7gukYkP1nciMS";
+#name = "madmachine";
+
+cpuload = "1";
+
+devices =        ["1"];
+hashprimorial =  ["5"];
+sieveprimorial = ["13"];
+
+corefreq =       ["-1"];
+memfreq =        ["-1"];
+powertune =      ["20"];
+
+
