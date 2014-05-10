@@ -9,15 +9,15 @@
 
 
 
-#define N 11
+#define N 11				// Number of 32bit limbs (N*32 = maximum fermat bits)
 
-#define SIZE 4096
-#define LSIZE 256
-#define STRIPES 420
-#define WIDTH 20
-#define PCOUNT 40960
-#define SCOUNT PCOUNT
-#define TARGET 10
+#define SIZE 4096			// Size of local sieve array (must be multiple of 1024)
+#define LSIZE 256			// Local worksize for sieve (don't change this)
+#define STRIPES 420			// Number of sieve segments (you may tune this)
+#define WIDTH 20			// Sieve width (includes extensions, you may tune this)
+#define PCOUNT 40960		// Number of sieve primes (must be multiple of 256, you should tune this, 40960 is for 280X)
+#define SCOUNT PCOUNT		// Don't change it
+#define TARGET 10			// Target for s_sieve
 
 
 

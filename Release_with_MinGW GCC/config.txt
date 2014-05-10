@@ -1,7 +1,8 @@
 
+server = "127.0.0.1";
 #server = "192.168.2.102";
-server = "54.187.143.168";
-port = "60099";
+#server = "54.187.143.168";
+port = "6666";
 
 # Your XPM payout address
 address = "AdRhBWBSxXrSJeqrwC1rM7gukYkP1nciMS";

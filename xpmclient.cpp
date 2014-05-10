@@ -811,17 +811,17 @@ bool XPMClient::Initialize(Configuration* cfg) {
 		printf("Compiling ...\n");
 		std::string sourcefile;
 		{
-			std::ifstream t("../gpu/fermat.cl");
+			std::ifstream t("gpu/fermat.cl");
 			std::string str((std::istreambuf_iterator<char>(t)), std::istreambuf_iterator<char>());
 			sourcefile = str;
 		}
 		{
-			std::ifstream t("../gpu/sieve.cl");
+			std::ifstream t("gpu/sieve.cl");
 			std::string str((std::istreambuf_iterator<char>(t)), std::istreambuf_iterator<char>());
 			sourcefile.append(str);
 		}
 		{
-			std::ifstream t("../gpu/sha256.cl");
+			std::ifstream t("gpu/sha256.cl");
 			std::string str((std::istreambuf_iterator<char>(t)), std::istreambuf_iterator<char>());
 			sourcefile.append(str);
 		}

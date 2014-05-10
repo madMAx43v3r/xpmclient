@@ -21,7 +21,7 @@
 std::string gClientName;
 unsigned gClientID;
 unsigned gInstanceID;
-const unsigned gClientVersion = 10;
+const unsigned gClientVersion = 11;
 const unsigned gClientTarget = 10;
 
 zctx_t* gCtx = 0;
@@ -393,11 +393,11 @@ int main(void) {
 	if(!gClientName.size())
 		gClientName = sysinfo::GetClientName();
 	
-	printf("madPrimeMiner-v%d.%d-T%d\n", gClientVersion/10, gClientVersion%10, gClientTarget);
+	printf("madPrimeMiner-v%d.%d\n", gClientVersion/10, gClientVersion%10);
 	printf("ClientName = '%s'  ClientID = %u  InstanceID = %u\n", gClientName.c_str(), gClientID, gInstanceID);
 	printf("Address = '%s'\n", gAddr.c_str());
 	
-	if(!gAddr.size() || gAddr == "PAYOUT_ADDRESS"){
+	if(!gAddr.size()){
 		printf("ERROR: address not specified in config.txt\n");
 		printf("hit return to exit...\n");
 		std::string line;
@@ -471,6 +471,8 @@ int main(void) {
 			gExit = false;
 			
 		}
+		
+		zsocket_disconnect(gFrontend, "tcp://%s:%d", frontHost.c_str(), frontPort);
 		
 		if(gExit)
 			break;
