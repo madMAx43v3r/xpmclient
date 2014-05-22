@@ -495,6 +495,7 @@ void PrimeMiner::Mining(zctx_t *ctx, void *pipe) {
 		int numcandis = fermat.final.count[0];
 		numcandis = std::min(numcandis, fermat.final.info.Size);
 		numcandis = std::max(numcandis, 0);
+		fermat.final.count[0] = 0;
 		//printf("got %d new candis\n", numcandis);
 		candis.resize(numcandis);
 		primeCount += numcandis;
@@ -540,7 +541,6 @@ void PrimeMiner::Mining(zctx_t *ctx, void *pipe) {
 			if(count > mBlockSize){
 				
 				fermat.bsize = count - (count % mBlockSize);
-				fermat.final.count[0] = 0;
 				fermat.final.count.copyToDevice(mBig, false);
 				
 				size_t globalSize[] = { fermat.bsize, 1, 1 };
@@ -555,6 +555,8 @@ void PrimeMiner::Mining(zctx_t *ctx, void *pipe) {
 				fermat.final.info.copyToHost(mBig, false);
 				fermat.final.count.copyToHost(mBig, false);
 				
+			}else{
+				fermat.buffer[widx].count[0] = 0;
 			}
 			//printf("fermat: total of %d infos, bsize = %d\n", count, fermat.bsize);
 		}
