@@ -527,14 +527,14 @@ __kernel void s_sieve(	__global const uint* gsieve1,
 		
 	}
 	
-	for(int start = 0; start <= WIDTH-TARGET/2; ++start){
+	for(int start = 0; start <= WIDTH-(TARGET+1)/2; ++start){
 		
 		uint mask = 0;
 		for(int line = 0; line < TARGET/2; ++line)
 			mask |= tmp1[start+line] | tmp2[start+line];
 		
-		/*if(TARGET & 1u && (start+TARGET/2) < WIDTH)
-			mask |= tmp1[start+TARGET/2];*/
+		if(TARGET & 1u)
+			mask |= tmp1[start+TARGET/2];
 		
 		if(mask != 0xFFFFFFFF)
 			for(int bit = 0; bit < 32; ++bit)
